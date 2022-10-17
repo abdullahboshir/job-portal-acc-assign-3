@@ -1,0 +1,17 @@
+[
+    {
+        "title": "softwore engineer",
+        "description": "ABC Limited Company, seeks a full-time mid-level software engineer to develop in-house tools.",
+        "educationRequirements": "Masters in Computer Science, Information Systems or related fields of study.",
+        "companyInfo": {
+            "name": "ABC Limited Company",
+            "contactPoint": "Jane Smith",
+            "email": "email@your-site.com",
+            "telephone": "+44 113 123 456",
+            "url": "http://www.your-site.com"
+          },
+          "estimatedSalary": 1199,
+         "jobLoaction": "1 Oxford Place, Leeds, West Yorkshire, 1 Oxford Place, UK",
+         "experience": "Minumum 3 years experience as a software engineer."
+    }
+]
