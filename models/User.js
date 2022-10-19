@@ -62,26 +62,32 @@ const usersShema = mongoose.Schema({
     location: {
         type: String,
     },
-    gender: {
-        enum: ['male', 'female']
-    },
-    age: {
-        type: Number,
-        min: [21, 'Age should be more than 21 years'],
-        max: [21, 'Age should be less than 55 years']
-    },
-    experience: Number,
-    imgURL: {
+    status: {
         type: String,
-        required: true,
-        validate: [validator.isURL, 'Wrong url']
+        enum: ['active', 'inactive', 'blocked'],
+        default: 'active'
     },
+    applicationDateStart: String,
+    applicationDateEnd: String,
+    // gender: {
+    //     enum: ['male', 'female']
+    // },
+    // age: {
+    //     type: Number,
+    //     min: [21, 'Age should be more than 21 years'],
+    //     max: [21, 'Age should be less than 55 years']
+    // },
+    // imgURL: {
+    //     type: String,
+    //     required: true,
+    //     validate: [validator.isURL, 'Wrong url']
+    // },
     applicationDate: Date,
     passwordChangedAt: Date,
     passwordResetToken: String,
     passwordResetExpires: Date
 },
-{timestamps: true}
+    { timestamps: true }
 );
 
 
@@ -90,7 +96,7 @@ usersShema.pre("save", function (next) {
     const hashedPassword = bcrypt.hashSync(password);
 
     this.password = hashedPassword;
-    this.password = undefined
+    this.confirmPassword = undefined
 
     next()
 });

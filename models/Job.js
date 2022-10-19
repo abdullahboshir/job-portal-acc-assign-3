@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const {ObjectId} = mongoose.Schema.Types;
 
 
 const jobSchema = mongoose.Schema({
@@ -15,8 +16,6 @@ const jobSchema = mongoose.Schema({
     description: String,
     educationRequirements: String,
     companyInfo: {
-        type: String,
-        required: true,
         name: String,
         contactPoint: String,
         email: {
@@ -33,6 +32,10 @@ const jobSchema = mongoose.Schema({
         },
         url: String
     },
+    jobId: {
+            type: ObjectId,
+            ref: "user"
+    },
     // jobType: {
     //     type: String,
     //     required: true,
@@ -40,24 +43,16 @@ const jobSchema = mongoose.Schema({
     // },
     estimatedSalary: Number,
     jobLocation: String,
-    gender: {
-        enum: ['male', 'female']
-    },
     // age: {
     //     type: Number,
     //     min: [21, 'Age should be more than 21 years'],
     //     max: [21, 'Age should be less than 55 years']
     // },
     experience: String,
-    // imgURL: {
-    //     type: String,
-    //     required: true,
-    //     validate: [validator.isURL, 'Wrong url']
-    // },
+    gender: {
+        enum: ['male', 'female']
+    },
     applicationDate: Date,
-    passwordChangedAt: Date,
-    passwordResetToken: String,
-    passwordResetExpires: Date
 });
 
 
