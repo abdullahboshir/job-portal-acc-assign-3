@@ -2,7 +2,8 @@ const {
     createJobService,
     getJobService,
     getJobByIdService,
-    JobUpdateByIdService
+    JobUpdateByIdService,
+    jobApplyService
 } = require("../services/job.service")
 
 
@@ -25,9 +26,9 @@ exports.createJob = async (req, res) => {
 };
 
 
-exports.getJobs = async (req, res) => {
+exports.getManagerJobs = async (req, res) => {
     try {
-        const job = await getJobService();
+        const job = await getManagerJobService();
 
         res.status(200).json({
             status: 'success',
@@ -81,4 +82,62 @@ exports.jobUpdateById = async (req, res) => {
             error: error.message
         })
     }
+};
+
+
+
+
+
+exports.getJobs = async (req, res) => {
+    try {
+        const job = await getJobService();
+
+        res.status(200).json({
+            status: 'success',
+            message: 'successfully get the job',
+            data: job
+        })
+    } catch (error) {
+        res.status(400).json({
+            status: 'fail',
+            message: "couldn'd get the job",
+            error: error.message
+        })
+    }
+};
+
+
+
+
+exports.jobFindById = async (req, res) => {
+    try {
+        const {id} = req.params;
+        const result = await getJobByIdService(id);
+
+        res.status(200).json({
+            status: 'success',
+            message: 'successfully get the job',
+            data: result
+        })
+    } catch (error) {
+        res.status(400).json({
+            status: 'fail',
+            message: "couldn'd get the job",
+            error: error.message
+        })
+    }
+};
+
+
+exports.jobApply = async (req, res) => {
+   try {
+    const apply = await jobApplyService()
+    console.log(apply)
+   } catch (error) {
+    res.status(400).json({
+        status: 'fail',
+        message: "couldn'd apply the job",
+        error: error.message
+    })
+   }
 };

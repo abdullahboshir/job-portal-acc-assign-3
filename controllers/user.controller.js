@@ -81,3 +81,22 @@ exports.login = async (req, res) => {
         })
     }
 };
+
+
+exports.getMe = async (req, res) => {
+    try {
+        const user = await findUserByEmail(req.user?.email);
+
+        const {password: dfd, ...others} = user.toObject()
+
+        res.status(200).json({
+            status: 'success',
+            data: others
+        })
+    } catch (error) {
+     res.status(500).json({
+        status: 'fail',
+        error: error.message
+     })   
+    }
+};

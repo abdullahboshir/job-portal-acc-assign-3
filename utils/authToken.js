@@ -7,6 +7,7 @@ const payload = {
     role: userInfo.role
 };
 
+
 const token = jwtToken.sign(payload, process.env.TOKEN_SECRET, {
     expiresIn: '10days'
 });

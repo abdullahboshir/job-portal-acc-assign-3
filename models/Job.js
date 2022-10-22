@@ -23,7 +23,6 @@ const jobSchema = mongoose.Schema({
             validate: [validator.isEmail, 'Provide a valid Email'],
             trim: true,
             lowercase: true,
-            unique: [true, 'Please provide a unique Emial'],
             reequired: [true, 'Email is requied']
         },
         telephone: {
@@ -32,15 +31,15 @@ const jobSchema = mongoose.Schema({
         },
         url: String
     },
-    jobId: {
+    jobId: [{
             type: ObjectId,
             ref: "user"
+    }],
+    jobType: {
+        type: String,
+        required: true,
+        trim: true,
     },
-    // jobType: {
-    //     type: String,
-    //     required: true,
-    //     trim: true,
-    // },
     estimatedSalary: Number,
     jobLocation: String,
     // age: {

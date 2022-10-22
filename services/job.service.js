@@ -6,7 +6,7 @@ exports.createJobService = async (data) => {
     return job;
 };
 
-exports.getJobService = async () => {
+exports.getManagerJobService = async () => {
     const job = await Job.find({});
     return job;
 };
@@ -19,4 +19,16 @@ exports.getJobByIdService = async (jobId) => {
 exports.JobUpdateByIdService = async (jobId, data) => {
     const result = await Job.updateOne({_id: jobId}, data);
     return result;
+};
+
+
+exports.getJobService = async () => {
+    const job = await Job.find({});
+    return job;
+};
+
+
+exports.jobApplyService = async () => {
+    const JobApply = await Job.create({});
+    return JobApply;
 };
