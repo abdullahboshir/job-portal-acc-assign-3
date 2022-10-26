@@ -5,7 +5,7 @@ const authorization = require('../middleware/authorization');
 const verifyToken = require('../middleware/verifyToken');
 
 
-router.use(verifyToken);
+// router.use(verifyToken);
 
 router.route('/jobs')
 .post( authorization('admin', 'manager') ,jobController.createJob);
@@ -28,7 +28,7 @@ router.route('/jobs/:id')
 
 
 router.route('/jobs/:id/apply')
-.post(jobController.jobApply);
+.post(verifyToken, jobController.jobApply);
 
 
 

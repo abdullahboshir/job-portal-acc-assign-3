@@ -3,7 +3,8 @@ const {
     getJobService,
     getJobByIdService,
     JobUpdateByIdService,
-    jobApplyService
+    jobApplyService,
+    jobApplyServiceRecord
 } = require("../services/job.service")
 
 
@@ -131,8 +132,14 @@ exports.jobFindById = async (req, res) => {
 
 exports.jobApply = async (req, res) => {
    try {
-    const apply = await jobApplyService()
+    const {id} = req.params;
+    const apply = await jobApplyService(id);
     console.log(apply)
+    res.status(200).json({
+        status: 'success',
+        message: 'successfully applyng the job',
+        data: apply
+    })
    } catch (error) {
     res.status(400).json({
         status: 'fail',

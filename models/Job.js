@@ -33,7 +33,8 @@ const jobSchema = mongoose.Schema({
     },
     jobId: [{
             type: ObjectId,
-            ref: "user"
+            ref: "user",
+            requied: true
     }],
     jobType: {
         type: String,

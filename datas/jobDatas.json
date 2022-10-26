@@ -7,9 +7,10 @@
             "name": "ABC Limited Company",
             "contactPoint": "Jane Smith",
             "email": "email@your-site.com",
-            "telephone": "+44 113 123 456",
+            "telephone": "44113123456",
             "url": "http://www.your-site.com"
           },
+          "jobType": "Job posting",
           "estimatedSalary": 1199,
          "jobLoaction": "1 Oxford Place, Leeds, West Yorkshire, 1 Oxford Place, UK",
          "experience": "Minumum 3 years experience as a software engineer."
