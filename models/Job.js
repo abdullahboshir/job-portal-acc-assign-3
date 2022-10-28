@@ -53,6 +53,16 @@ const jobSchema = mongoose.Schema({
         enum: ['male', 'female']
     },
     applicationDate: Date,
+    applyDeadline: {
+        start: {
+            type: Date,
+            default: Date.now
+        },
+        end: {
+            type: Date,
+            default: () => Date.now() + 25*24*60*60*1000
+        }
+      }
 });
 
 

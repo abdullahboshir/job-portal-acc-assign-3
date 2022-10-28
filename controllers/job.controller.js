@@ -133,12 +133,21 @@ exports.jobFindById = async (req, res) => {
 exports.jobApply = async (req, res) => {
    try {
     const {id} = req.params;
-    const apply = await jobApplyService(id);
-    console.log(apply)
+    const {jobRecord, jobIdFind} = await jobApplyService(id);
+
+    
+    const endDate = new Date()
+    if(jobIdFind.applyDeadline.end < endDate){
+        return res.status(408).json({
+            status: 'fail',
+            message: 'Application period is over'
+        });
+    }
+
     res.status(200).json({
         status: 'success',
         message: 'successfully applyng the job',
-        data: apply
+        data: jobRecord || jobIdFind
     })
    } catch (error) {
     res.status(400).json({

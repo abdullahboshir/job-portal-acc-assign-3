@@ -1,17 +1,19 @@
-const { userCreateService, findUserByEmail } = require("../services/user.service");
+const { userCreateService, findUserByEmail, getCanditesService, getManagersService } = require("../services/user.service");
 const { generateToken } = require("../utils/authToken");
 
 
 
 exports.signup = async (req, res) => {
     try {
+        console.log(req.body)
         const user = await userCreateService(req.body);
         const {password: bdf, ...others} = user.toObject();
+
         res.status(200).json({
             status: 'success',
             message: 'successfully created the new account',
             data: others
-        })
+        });
     } catch (error) {
         res.status(400).json({
             status: 'fail',
@@ -38,7 +40,7 @@ exports.login = async (req, res) => {
         if(!user){
             return res.status(401).json({
                 status: 'fail',
-                error: 'no user found please an account'
+                error: 'no user found please create an new account'
             })
         };
 
@@ -99,4 +101,39 @@ exports.getMe = async (req, res) => {
         error: error.message
      })   
     }
+};
+
+
+exports.getAllCandidates = async (req, res) => {
+try {
+    const allCandidates = await getCanditesService();
+
+res.status(200).json({
+    status: 'success',
+    message: 'successfully got all candidates',
+    data: allCandidates
+})
+} catch (error) {
+    res.status(500).json({
+        status: 'fail',
+        error: error.message
+     }) 
+}
+};
+
+exports.getAllManagers = async (req, res) => {
+try {
+    const allCandidates = await getManagersService();
+
+res.status(200).json({
+    status: 'success',
+    message: 'successfully got all hiring Managers',
+    data: allCandidates
+})
+} catch (error) {
+    res.status(500).json({
+        status: 'fail',
+        error: error.message
+     }) 
+}
 };

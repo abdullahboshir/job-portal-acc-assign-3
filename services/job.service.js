@@ -31,22 +31,14 @@ exports.getJobService = async () => {
 
 exports.jobApplyService = async (applyJobId) => {
     const {id} = await User.findOne({});
-    console.log('user id', id)
     const jobIdFind = await Job.findOne({_id: applyJobId});
-    const doesUserExist = await Job.find({jobId: {$elemMatch: {id: ObjectId('id')}}});
-    const {_id: jobIdApply} = jobIdFind;
-    console.log('User is exist', doesUserExist)
-    if(doesUserExist){
-        return;
-    }
-    else{
-        const jobRecord = await Job.updateOne(
-            {_id: jobIdApply},
-            {$push : {jobId: id}}
-        )
-    }
-    
-  
-    console.log('update success?', jobRecord)
-    return jobRecord;
+    const {id: jobIdApply} = jobIdFind;
+
+    const jobRecord = await Job.updateOne( 
+        {_id: jobIdApply},
+        {$push : {jobId: id}}
+    )
+    console.log('update success?', jobIdFind.applyDeadline.end)
+    // const doesUserExist = await Job.find({jobId: {$elemMatch: {id}}});
+    return {jobRecord, jobIdFind};
 };
