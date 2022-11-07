@@ -23,7 +23,7 @@ const jobSchema = mongoose.Schema({
             validate: [validator.isEmail, 'Provide a valid Email'],
             trim: true,
             lowercase: true,
-            reequired: [true, 'Email is requied']
+            reequired: [true, 'Email is required']
         },
         telephone: {
             type: String,
@@ -43,11 +43,6 @@ const jobSchema = mongoose.Schema({
     },
     estimatedSalary: Number,
     jobLocation: String,
-    // age: {
-    //     type: Number,
-    //     min: [21, 'Age should be more than 21 years'],
-    //     max: [21, 'Age should be less than 55 years']
-    // },
     experience: String,
     gender: {
         enum: ['male', 'female']

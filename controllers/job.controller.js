@@ -3,8 +3,7 @@ const {
     getJobService,
     getJobByIdService,
     JobUpdateByIdService,
-    jobApplyService,
-    jobApplyServiceRecord
+    jobApplyService
 } = require("../services/job.service")
 
 
@@ -48,7 +47,7 @@ exports.getManagerJobs = async (req, res) => {
 
 exports.getJobById = async (req, res) => {
     try {
-        const {id} = req.params;
+        const { id } = req.params;
         const result = await getJobByIdService(id);
 
         res.status(200).json({
@@ -68,7 +67,7 @@ exports.getJobById = async (req, res) => {
 
 exports.jobUpdateById = async (req, res) => {
     try {
-        const {id} = req.params;
+        const { id } = req.params;
         const result = await JobUpdateByIdService(id, req.body);
 
         res.status(200).json({
@@ -112,7 +111,7 @@ exports.getJobs = async (req, res) => {
 
 exports.jobFindById = async (req, res) => {
     try {
-        const {id} = req.params;
+        const { id } = req.params;
         const result = await getJobByIdService(id);
 
         res.status(200).json({
@@ -131,29 +130,46 @@ exports.jobFindById = async (req, res) => {
 
 
 exports.jobApply = async (req, res) => {
-   try {
-    const {id} = req.params;
-    const {jobRecord, jobIdFind} = await jobApplyService(id);
+    try {
+        const userEmail = req.user.email;
+        const { id } = req.params;
+        const { jobIdFind, checkUserExist } = await jobApplyService(userEmail, id);
 
+const endDate = new Date()
+        if (jobIdFind.applyDeadline.end < endDate) {
+            return res.status(408).json({
+                status: 'fail',
+                message: 'Application period is over'
+            });
+        }
+
+        if (checkUserExist) {
+            return res.status(409).json({
+                status: 'fail',
+                message: 'Already you have applied for this job'
+            })
+        }
+        else {
+            res.status(200).json({
+                status: 'success',
+                message: 'successfully applyng the job',
+                data: jobIdFind
+            })
+        }
+
+
+        // res.status(200).json({
+        //     status: 'success',
+        //     message: 'successfully applyng the job',
+        //     data: jobIdFind
+        // })
+    } catch (error) {
     
-    const endDate = new Date()
-    if(jobIdFind.applyDeadline.end < endDate){
-        return res.status(408).json({
-            status: 'fail',
-            message: 'Application period is over'
-        });
+            res.status(400).json({
+                status: 'fail',
+                message: "couldn'd apply the job",
+                error: error.message
+            })
+    
     }
-
-    res.status(200).json({
-        status: 'success',
-        message: 'successfully applyng the job',
-        data: jobRecord || jobIdFind
-    })
-   } catch (error) {
-    res.status(400).json({
-        status: 'fail',
-        message: "couldn'd apply the job",
-        error: error.message
-    })
-   }
 };

@@ -11,8 +11,11 @@ router.post('/user/login', userController.login);
 router.use(verifyToken);
 router.get('/user/me', userController.getMe);
 
+
+// Optional routes
 router.get('/user/candidates',  authorization('admin'), userController.getAllCandidates);
 router.get('/user/managers',  authorization('admin'), userController.getAllManagers);
+
 
 
 module.exports = router;

@@ -10,9 +10,186 @@
             "telephone": "44113123456",
             "url": "http://www.your-site.com"
           },
-          "jobType": "Job posting",
+          "jobType": "IT & Telecommunication",
           "estimatedSalary": 1199,
          "jobLoaction": "1 Oxford Place, Leeds, West Yorkshire, 1 Oxford Place, UK",
          "experience": "Minumum 3 years experience as a software engineer."
+    },
+    {
+        "title": "Web development",
+        "description": "ABC Limited Company, seeks a full-time mid-level software engineer to develop in-house tools.",
+        "educationRequirements": "Masters in Computer Science, Information Systems or related fields of study.",
+        "companyInfo": {
+            "name": "ABC Limited Company",
+            "contactPoint": "Jane Smith",
+            "email": "emaill@your-site.com",
+            "telephone": "44113123456",
+            "url": "http://www.your-site.com"
+          },
+          "jobType": "IT & Telecommunication",
+          "estimatedSalary": 1399,
+         "jobLoaction": "cumilla",
+         "experience": "Minumum 3 years experience as a software engineer."
+    },
+    {
+        "title": "C++ Software Engineer",
+        "description": "Looking for C++ Programmer who has good programming skill to join our team. Location- Gulshan",
+        "educationRequirements": "B.Sc or M.Sc in Computer Science/Engineering or equivalent.",
+        "companyInfo": {
+            "name": "ABC Limited Company",
+            "contactPoint": "Jane Smith",
+            "email": "emailll@your-site.com",
+            "telephone": "44113123456",
+            "url": "http://www.your-site.com"
+          },
+          "jobType": "IT & Telecommunication",
+          "estimatedSalary": 1299,
+         "jobLoaction": "dhaka",
+         "experience": "Minumum 3 years experience as a software engineer."
+    },
+    {
+        "title": "Sr. Java Developer",
+        "description": "Looking for Java Developer who has good programming skill to join our team. Location- Gulshan",
+        "educationRequirements": "Bachelor of Science (BSc) in Information Technology, Masters in Computer Application (MCA)",
+        "companyInfo": {
+            "name": "ABC Limited Company",
+            "contactPoint": "Jane Smith",
+            "email": "emaillll@your-site.com",
+            "telephone": "44113123456",
+            "url": "http://www.your-site.com"
+          },
+          "jobType": "IT & Telecommunication",
+          "estimatedSalary": 999,
+         "jobLoaction": "chittagong",
+         "experience": "Minumum 3 years experience as a software engineer."
+    },
+    {
+        "title": "Graphic Designer",
+        "description": "We are seeking graphic designer to join at our team. You will be designated as a graphic designer to make graphics works for the flexible packaging industry. You may need to manage /handle our corporate clients. If you have achievement in flexible packaging designing then that will be consider as your special efficiency and in that case we will consider the requirements of educational qualification.",
+        "educationRequirements": "Bachelor of Fine Arts in Graphic Design or Higher Secondary School.",
+        "companyInfo": {
+            "name": "XYZ Limited Company",
+            "contactPoint": "Jane Smith",
+            "email": "xyz@gmail.com",
+            "telephone": "44113123456",
+            "url": "http://www.your-site.com"
+          },
+          "jobType": "Design/Creative",
+          "estimatedSalary": 899,
+         "jobLoaction": "Khulna",
+         "experience": "Minumum 3 years experience as a Grapic designer."
+    },
+    {
+        "title": "Web & Graphics Designer",
+        "description": "We are looking to hire an experienced web designer and graphic designer to carry out web design and graphic design. In this position, the candidate will be involved in the implementation of unique web design and graphics design strategies, good knowledge of plan execution and marketing area development and SEO expertise.",
+        "educationRequirements": "Bachelor's degree in Graphic Web Design or related field required.",
+        "companyInfo": {
+            "name": "XYZ Limited Company",
+            "contactPoint": "Jane Smith",
+            "email": "xyzz@gmail.com",
+            "telephone": "44113123456",
+            "url": "http://www.your-site.com"
+          },
+          "jobType": "Design/Creative",
+          "estimatedSalary": 900,
+         "jobLoaction": "Barishal",
+         "experience": "Minumum 2 years experience as a Web & Graphics Designer."
+    },
+    {
+        "title": "Trainee Designer (Fabric) - Design & Development",
+        "description": "We are looking to hire an experienced web designer and graphic designer to carry out web design and graphic design. In this position, the candidate will be involved in the implementation of unique web design and graphics design strategies, good knowledge of plan execution and marketing area development and SEO expertise.",
+        "educationRequirements": "B.Sc in Textile Engineering",
+        "companyInfo": {
+            "name": "XYZ Limited Company",
+            "contactPoint": "Jane Smith",
+            "email": "xyzzz@gmail.com",
+            "telephone": "44113123456",
+            "url": "http://www.your-site.com"
+          },
+          "jobType": "Design/Creative",
+          "estimatedSalary": 1000,
+         "jobLoaction": "Chattogram",
+         "experience": "Minumum 3 years experience as a Designer."
+    },
+    {
+        "title": "Video Editor",
+        "description": "We are looking for an experienced ''Video Editor'' to join our team. The applicant need to edit various Informative- News Videos for Social Media and Youtube.",
+        "educationRequirements": "We seek for talents. Education qualification may be considered for extra ordinary applicants.",
+        "companyInfo": {
+            "name": "XYZ Limited Company",
+            "contactPoint": "Jane Smith",
+            "email": "xyzzzz@gmail.com",
+            "telephone": "44113123456",
+            "url": "http://www.your-site.com"
+          },
+          "jobType": "Design/Creative",
+          "estimatedSalary": 700,
+         "jobLoaction": "Dhaka",
+         "experience": "Minumum 1 years experience as a video editor."
+    },
+    {
+        "title": "Data Processing Operator",
+        "description": "Good typing speed over and above 40 with 100% accuracy, Responsible data en (Both English & Bengali) work using a personal computer and appropriate software, Well-versed with MS Office, Entering, updating data in various systems and ensuring the accuracy and confidentiality",
+        "educationRequirements": "HSC, Bachelor of Arts (BA)",
+        "companyInfo": {
+            "name": "ETC Limited Company",
+            "contactPoint": "John Doe",
+            "email": "etc@gmail.com",
+            "telephone": "44113123456",
+            "url": "http://www.your-site.com"
+          },
+          "jobType": "Data Entry/Operator/BPO",
+          "estimatedSalary": 600,
+         "jobLoaction": "Dhaka",
+         "experience": "Minumum 2 years experience as a Data entry."
+    },
+    {
+        "title": "Call Center Associate (Local/International Call)",
+        "description": "Working days: 6 days, Work Hours: 9 hours, Salary will be reviewed in every six months, Benefits: Attendance bonus and sales incentive",
+        "educationRequirements": "Bachelor degree in any discipline, Skills Required: Good English",
+        "companyInfo": {
+            "name": "ETC Limited Company",
+            "contactPoint": "John Doe",
+            "email": "etcc@gmail.com",
+            "telephone": "44113123456",
+            "url": "http://www.your-site.com"
+          },
+          "jobType": "Data Entry/Operator/BPO",
+          "estimatedSalary": 799,
+         "jobLoaction": "cumilla",
+         "experience": "Minumum 1 years experience as a Data entry."
+    },
+    {
+        "title": "Call Center Associate Bangladesh",
+        "description": "Working days: 6 days, Work Hours: 9 hours, Salary will be reviewed in every six months, Benefits: Attendance bonus and sales incentive",
+        "educationRequirements": "Bachelor degree in any discipline, Skills Required: Good English",
+        "companyInfo": {
+            "name": "ETC Limited Company",
+            "contactPoint": "John Doe",
+            "email": "etcbcb@gmail.com",
+            "telephone": "44113123456",
+            "url": "http://www.your-site.com"
+          },
+          "jobType": "Data Entry/Operator/BPO",
+          "estimatedSalary": 720,
+         "jobLoaction": "cumilla",
+         "experience": "Minumum 1 years experience as a Data entry."
+    },
+
+    {
+        "title": "Call Center Associate usa",
+        "description": "Working days: 6 days, Work Hours: 9 hours, Salary will be reviewed in every six months, Benefits: Attendance bonus and sales incentive",
+        "educationRequirements": "Bachelor degree in any discipline, Skills Required: Good English",
+        "companyInfo": {
+            "name": "ETC Limited Company",
+            "contactPoint": "John Doe",
+            "email": "etcbbb@gmail.com",
+            "telephone": "44113123456",
+            "url": "http://www.your-site.com"
+          },
+          "jobType": "Data Entry/Operator/BPO",
+          "estimatedSalary": 650,
+         "jobLoaction": "cumilla",
+         "experience": "Minumum 1 years experience as a Data entry."
     }
 ]

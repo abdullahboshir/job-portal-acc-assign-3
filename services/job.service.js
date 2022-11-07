@@ -13,12 +13,12 @@ exports.getManagerJobService = async () => {
 };
 
 exports.getJobByIdService = async (jobId) => {
-    const result = await Job.findOne({_id: jobId});
+    const result = await Job.findOne({ _id: jobId });
     return result;
 };
 
 exports.JobUpdateByIdService = async (jobId, data) => {
-    const result = await Job.updateOne({_id: jobId}, data);
+    const result = await Job.updateOne({ _id: jobId }, data);
     return result;
 };
 
@@ -29,17 +29,19 @@ exports.getJobService = async () => {
 };
 
 
-exports.jobApplyService = async (applyJobId) => {
-    const {id} = await User.findOne({});
-    const jobIdFind = await Job.findOne({_id: applyJobId});
-    const {id: jobIdApply, jobId} = jobIdFind;
+exports.jobApplyService = async (userEmail, applyJobId) => {
 
-    // const jobRecord = await Job.updateOne( 
-    //     {_id: jobIdApply},
-    //     {$push : {jobId: id}}
-    // )
-    console.log('update success?', jobIdFind.applyDeadline.end)
-    const doesUserExist = await jobId.includes(id);
-    console.log(doesUserExist)
-    return {jobRecord, jobIdFind};
+    const { id } = await User.findOne({ email: userEmail });
+    const jobIdFind = await Job.findOne({ _id: applyJobId });
+    const { id: jobIdApply, jobId } = jobIdFind;
+    const checkUserExist = await jobId.includes(id);
+
+    if (!checkUserExist) {
+        await Job.updateOne(
+            { _id: jobIdApply },
+            { $push: { jobId: id } } 
+        )
+    }
+
+    return { jobIdFind, checkUserExist };
 };

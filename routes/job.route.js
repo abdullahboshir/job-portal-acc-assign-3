@@ -25,8 +25,11 @@ router.route('/jobs/:id')
 .get(verifyToken, jobController.jobFindById);
 
 router.route('/jobs/:id/apply')
-.post(verifyToken, verifyToken, jobController.jobApply);
+.post(verifyToken, jobController.jobApply);
 
+// router.delete('/deleteAll', async (req, res) => {
+// const result = await Job.deleteMany()
+// })
 
 
 
